@@ -1,0 +1,52 @@
+.pi__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.pi__form-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 60em;
+  min-width: 30em;
+}
+
+.pi__form__address-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: 1px solid #d7d6d6;
+  border-radius: 3px;
+  margin-bottom: .2em;
+}
+
+.pi__form__address-name {
+  flex-basis: 70%;
+  padding: .5em;
+  margin: 0;
+}
+
+.pi__remove-address {
+  margin-left: auto;
+}
+
+.pi__input {
+  flex: 0 0 32%;
+  margin: 0.2em;
+}
+
+.pi__actions {
+  margin-bottom: 1em;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+}
+
+.pi__action {
+  min-width: 7em;
+}
+
+.pi__action:not(:last-child) {
+  margin-right: .5em;
+}

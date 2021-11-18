@@ -1,0 +1,15 @@
+.rp__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rp__nav-bar {
+    flex: 0 0 auto;
+    z-index: 1000;
+}
+
+.rp__content {
+    flex: 1 1 auto;
+    overflow: auto;
+}

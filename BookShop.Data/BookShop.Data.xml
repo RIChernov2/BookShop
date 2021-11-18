@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BookShop.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Data.Entities.Author">
+            <summary>
+            Автор
+            </summary>
+        </member>
+        <member name="P:Data.Entities.Author.Name">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="P:Data.Entities.Author.Surname">
+            <summary>
+            Фамилия
+            </summary>
+        </member>
+        <member name="P:Data.Entities.Author.Age">
+            <summary>
+            Возраст
+            </summary>
+        </member>
+        <member name="P:Data.Entities.BaseEntity.Id">
+            <summary>
+            Идентификатор сущности
+            </summary>
+        </member>
+        <member name="P:Data.Entities.BaseEntity`1.Id">
+            <summary>
+            Идентификатор сущности
+            </summary>
+        </member>
+        <member name="T:Data.Entities.Book">
+            <summary>
+            Книга
+            </summary>
+        </member>
+        <member name="P:Data.Entities.Book.Title">
+            <summary>
+            Название книги
+            </summary>
+        </member>
+        <member name="P:Data.Entities.Book.Description">
+            <summary>
+            Описание книги
+            </summary>
+        </member>
+        <member name="P:Data.Entities.Book.Authors">
+            <summary>
+            Список авторов книги
+            </summary>
+        </member>
+        <member name="T:Data.Entities.Cart">
+            <summary>
+            Корзина
+            </summary>
+        </member>
+        <member name="P:Data.Entities.Cart.Book">
+            <summary>
+            Книга
+            </summary>
+        </member>
+        <member name="P:Data.Entities.Cart.BookAmount">
+            <summary>
+            Кол-во экземпляров книги
+            </summary>
+        </member>
+        <member name="P:Data.Entities.Cart.TotalPrice">
+            <summary>
+            Общая цена
+            </summary>
+        </member>
+    </members>
+</doc>

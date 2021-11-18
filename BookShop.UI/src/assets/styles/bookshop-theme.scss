@@ -1,0 +1,20 @@
+@use '~@angular/material' as mat;
+@import '~@angular/material/theming';
+@import 'palettes';
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$bookShop-primary: mat.define-palette($bookShop-primary);
+$bookShop-accent: mat.define-palette($bookShop-accent);
+$bookShop-warn: mat.define-palette($bookShop-warn);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$bookShop-theme: mat.define-light-theme((
+  color: (
+    primary: $bookShop-primary,
+    accent: $bookShop-accent,
+    warn: $bookShop-warn,
+  )
+));

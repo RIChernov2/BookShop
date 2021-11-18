@@ -1,0 +1,19 @@
+@import 'variables';
+
+.pp__wrapper {
+  display: flex;
+  height: 100%;
+}
+
+.pp__nav-section {
+  flex: 0 0 150px;
+  padding: .5em 0;
+  border-right: 1px solid #d7d6d6;
+  background-color: $nav-sidebar-background;
+}
+
+.pp__content {
+  flex-grow: 1;
+  margin: .5em;
+  overflow: auto;
+}

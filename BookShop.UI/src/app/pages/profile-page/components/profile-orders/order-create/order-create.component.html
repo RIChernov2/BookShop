@@ -1,0 +1,23 @@
+<div class="ocr__wrapper">
+  <div class="ocr__product-list">
+    <cart-product-list [locked]="true"></cart-product-list>
+  </div>
+
+  <form *ngIf="currentUser" [formGroup]="orderInfoFormGroup">
+    <mat-form-field appearance="fill" class="ocr__input">
+      <mat-label>Address</mat-label>
+      <mat-select formControlName="addressId">
+        <mat-option *ngFor="let address of currentUser.addresses" [value]="address.addressId">
+          {{ address.street + ', ' + address.home + ', apt. ' + address.apartments }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+
+  <button mat-raised-button color="primary"
+          [disabled]="orderInfoFormGroup.pristine || orderInfoFormGroup.invalid"
+          (click)="onOrderConfirm()"
+          class="ocr__action">
+    Confirm order
+  </button>
+</div>

@@ -1,0 +1,10 @@
+<div class="bl__wrapper">
+  <!-- <section class="bl__filters">
+
+  </section> -->
+
+  <section class="bl__list">
+    <loading-spinner [size]="80" *ngIf="!books"></loading-spinner>
+    <book-card *ngFor="let book of books" [book]="book" [canAddToCart]="canAddToCart" class="bl__list-item"></book-card>
+  </section>
+</div>

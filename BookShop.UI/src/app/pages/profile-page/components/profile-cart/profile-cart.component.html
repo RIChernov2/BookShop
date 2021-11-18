@@ -1,0 +1,9 @@
+<div class="pcart__wrapper">
+  <cart-product-list></cart-product-list>
+
+  <button mat-raised-button color="primary"
+          (click)="onOrderCreate()"
+          [disabled]="cartProducts.length === 0">
+    Create order
+  </button>
+</div>

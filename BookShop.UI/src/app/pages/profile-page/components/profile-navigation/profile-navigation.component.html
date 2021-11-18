@@ -1,0 +1,8 @@
+<div class="pn__wrapper">
+  <div  *ngFor="let item of navItems"
+        class="pn__link"
+        (click)="onLinkClick(item.relativeUrl)"
+        [class.active]="item.relativeUrl == currentUrl">
+    {{ item.pageTitle }}
+  </div>
+</div>

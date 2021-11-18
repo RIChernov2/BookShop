@@ -1,0 +1,11 @@
+<div class="bk__wrapper" *ngIf="book">
+  <h4>{{ book.title }}</h4>
+  <div *ngIf="book.author">{{ book.author.name + ' ' + book.author.surname }}</div>
+  <p>{{ book.description }}</p>
+
+  <div class="bk__book-price">{{ book.price }} Rub.</div>
+
+  <button mat-icon-button color="primary" class="bk__add-to-cart" (click)="onAddBook()" [disabled]="!canAddToCart">
+    <mat-icon>add_shopping_cart</mat-icon>
+  </button>
+</div>

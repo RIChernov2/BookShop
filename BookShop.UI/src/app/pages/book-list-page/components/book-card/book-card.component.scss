@@ -1,0 +1,36 @@
+@import 'variables';
+
+.bk__wrapper {
+  position: relative;
+  width: 12em;
+  height: 12em;
+  padding: .2em .2em 40px;
+  border: 1px solid #c3c1c1;
+  border-radius: 2px;
+  background-color: $book-card-background;
+
+  h4 {
+    font-weight: bold;
+    margin-bottom: 0.3em;
+  }
+
+  p {
+    font-style: italic;
+  }
+
+  .bk__book-price {
+    position: absolute;
+    bottom: 0; left: 0;
+    padding: 0.2em;
+  }
+
+  .bk__add-to-cart {
+    position: absolute;
+    bottom: 0; right: 0;
+    transition: .5s;
+  }
+
+  .bk__add-to-cart:hover {
+    opacity: 0.8;
+  }
+}

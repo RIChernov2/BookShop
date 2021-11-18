@@ -1,0 +1,30 @@
+<div class="po__wrapper">
+  <table *ngIf="ordersExtended != null">
+    <thead>
+      <tr>
+        <th class="po__head-cell">Order Id</th>
+        <th class="po__head-cell">Address</th>
+        <th class="po__head-cell">Books</th>
+        <th class="po__head-cell">Status</th>
+        <th class="po__head-cell">Creation Date</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <tr *ngIf="ordersExtended.length === 0" class="po__body-row">
+        <td colspan="5">There are no orders yet.</td>
+      </tr>
+      <tr *ngFor="let order of ordersExtended" class="po__body-row">
+        <td>{{ order.orderId }}</td>
+        <td>{{ order.address | address }}</td>
+        <td>
+          <div *ngFor="let orderedBook of order.orderedBooks">
+            {{ orderedBook.book.title + ', ' + orderedBook.amount + ' pcs., price per. orderedBook: ' + orderedBook.retailPrice }}
+          </div>
+        </td>
+        <td>{{ order.orderStatus | orderStatus }}</td>
+        <td>{{ order.creationDate | date : 'short' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

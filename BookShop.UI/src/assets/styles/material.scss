@@ -1,0 +1,25 @@
+@use '~@angular/material' as mat;
+@import 'bookshop-theme';
+@include mat.core();
+@include mat.all-component-themes($bookShop-theme);
+
+$color-config: mat.get-color-config($bookShop-theme);
+
+// mat-dialog styles
+.action-info {
+  max-height: 300px;
+  max-width: 350px;
+  overflow: auto;
+}
+
+.action-success {
+  background: #83e197;
+}
+
+.action-error {
+  background: map-get($color-config, 'warn', 300);
+}
+
+.action-warning {
+  background: map-get($color-config, 'warn', 100);
+}

@@ -1,0 +1,84 @@
+<div class="pi__wrapper">
+  <form [formGroup]="userInfoForm" class="pi__form">
+    <section class="pi__actions">
+      <button mat-raised-button color="primary"
+              [disabled]="userInfoForm.pristine || userInfoForm.invalid"
+              (click)="onUpdate()"
+              class="pi__action">
+        Update info
+      </button>
+      <button mat-raised-button color="primary"
+              *ngIf="!userInfoForm.pristine"
+              (click)="onCancelChanges()"
+              class="pi__action">
+        Cancel changes
+      </button>
+    </section>
+
+    <section class="pi__form-controls">
+
+      <mat-form-field class="pi__input" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+  
+      <mat-form-field class="pi__input" appearance="fill">
+        <mat-label>Surname</mat-label>
+        <input matInput formControlName="surname">
+      </mat-form-field>
+  
+      <mat-form-field class="pi__input" appearance="fill">
+        <mat-label>Age</mat-label>
+        <input matInput formControlName="age" type="number">
+      </mat-form-field>
+
+      <ng-container formArrayName="addresses">
+        <div *ngFor="let address of addressesValues; index as i" class="pi__form__address-wrapper" [formGroup]="address">
+            <mat-form-field class="pi__form__address-name" appearance="fill">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="addressName">
+            </mat-form-field>
+
+            <button mat-icon-button color="warn" class="pi__remove-address" (click)="onDeleteAddress(i)">
+              <mat-icon>delete_forever</mat-icon>
+            </button>
+
+            <mat-form-field class="pi__input" appearance="fill">
+              <mat-label>Country</mat-label>
+              <input matInput formControlName="country">
+            </mat-form-field>
+
+            <mat-form-field class="pi__input" appearance="fill">
+              <mat-label>District</mat-label>
+              <input matInput formControlName="district">
+            </mat-form-field>
+
+            <mat-form-field class="pi__input" appearance="fill">
+              <mat-label>City</mat-label>
+              <input matInput formControlName="city">
+            </mat-form-field>
+
+            <mat-form-field class="pi__input" appearance="fill">
+              <mat-label>Street</mat-label>
+              <input matInput formControlName="street">
+            </mat-form-field>
+
+            <mat-form-field class="pi__input" appearance="fill">
+              <mat-label>Home</mat-label>
+              <input matInput formControlName="home">
+            </mat-form-field>
+
+            <mat-form-field class="pi__input" appearance="fill">
+              <mat-label>Apartments</mat-label>
+              <input matInput formControlName="apartments">
+            </mat-form-field>
+        </div>
+
+        <button mat-icon-button color="primary" class="pi__add-address" (click)="onAddAddress()">
+          <mat-icon>add_circle</mat-icon>
+        </button>
+      </ng-container>
+
+    </section>
+  </form>
+</div>

@@ -1,0 +1,20 @@
+<div class="lp__wrapper">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="lp__form">
+
+    <mat-form-field class="lp__input" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field class="lp__input" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid || pendingAuthentication">
+      Login
+      <loading-spinner *ngIf="pendingAuthentication" [size]="35"></loading-spinner>
+    </button>
+
+  </form>
+</div>

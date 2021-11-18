@@ -1,0 +1,24 @@
+.bl__wrapper {
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.bl__filters,
+.bl__list {
+  padding: 1em;
+}
+
+.bl__filters {
+  width: 15em;
+  border-right: 1px solid #c3c1c1;
+}
+
+.bl__list {
+  flex-grow: 1;
+  display: flex;
+}
+
+.bl__list-item {
+  margin: .5em;
+}

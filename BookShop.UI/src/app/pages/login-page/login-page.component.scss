@@ -1,0 +1,18 @@
+@import 'variables';
+
+.lp__wrapper {
+  height: 100%;
+  display: flex;
+}
+
+.lp__form {
+  margin: auto;
+  padding: 1em;
+  border: 1px solid #c1c1c1;
+  border-radius: 6px;
+  background-color: $login-background;
+  box-shadow: 0 0 16px 0 #656565;
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+}

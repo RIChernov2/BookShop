@@ -1,0 +1,15 @@
+@use '~@angular/material' as mat;
+@import 'bookshop-theme';
+
+$color-config: mat.get-color-config($bookShop-theme);
+
+$primary: map-get($color-config, 'primary', 500);
+$accent: map-get($color-config, 'accent', 500);
+$warn: map-get($color-config, 'warn', 500);
+$warn-light: map-get($color-config, 'warn', 200);
+$loading-spinner-color: map-get($color-config, 'accent', 800);
+$navbar-background: map-get($color-config, 'primary', 700);
+$book-card-background: map-get($color-config, 'primary', 200);
+$login-background: map-get($color-config, 'primary', 200);
+$nav-sidebar-background: map-get($color-config, 'primary', 300);
+$nav-sidebar-selected: map-get($color-config, 'primary', 700);

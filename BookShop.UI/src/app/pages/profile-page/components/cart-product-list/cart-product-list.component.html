@@ -1,0 +1,36 @@
+<table>
+  <thead>
+    <tr>
+      <th class="cpl__head-cell">№</th>
+      <th class="cpl__head-cell">Book</th>
+      <th class="cpl__head-cell">Amount</th>
+      <th class="cpl__head-cell">Total</th>
+      <th class="cpl__head-cell" *ngIf="!locked"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngIf="cartProducts.length === 0" class="cpl__body-row">
+      <td colspan="5">Cart is empty.</td>
+    </tr>
+    <tr *ngFor="let cartProduct of cartProducts; index as i" class="cpl__body-row">
+      <td>{{ i + 1 }}</td>
+      <td>{{ cartProduct.book?.title }}</td>
+      <td>
+        <button *ngIf="!locked" mat-icon-button color="warn" (click)="onAmountDecrease(cartProduct)">
+          <mat-icon>arrow_left</mat-icon>
+        </button>
+        <span>{{ cartProduct.amount }}</span>
+        <button *ngIf="!locked" mat-icon-button color="warn" (click)="onAmountIncrease(cartProduct)">
+          <mat-icon>arrow_right</mat-icon>
+        </button>
+      </td>
+      <td>{{ cartProduct.book!.price * cartProduct.amount }} Rub.</td>
+      <td *ngIf="!locked">
+        <button mat-icon-button color="warn" (click)="onCartProductDelete(cartProduct)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

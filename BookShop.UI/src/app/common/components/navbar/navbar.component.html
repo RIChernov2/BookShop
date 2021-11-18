@@ -1,0 +1,30 @@
+<div class="nav__wrapper">
+  <div  *ngFor="let item of navItems"
+        class="nav__link"
+        (click)="onLinkClick(item.relativeUrl)"
+        [class.active]="item.relativeUrl == currentUrl">
+    {{ item.pageTitle }}
+  </div>
+
+  <div *ngIf="!currentUser" class="nav__link right" [class.active]="currentUrl == 'login'" (click)="onLinkClick('login')">
+    Login
+  </div>
+
+  <ng-container *ngIf="currentUser">
+    <div class="nav__link nav__profile-link right" [class.active]="currentUrl | startsWith : 'profile'" (click)="onLinkClick('profile')">
+      Profile ({{ currentUser.email }})
+      <mat-icon *ngIf="hasNewNotifications" class="nav__notifications">notifications</mat-icon>
+    </div>
+
+    <div class="nav__link" (click)="onLogout()">
+      Logout
+    </div>
+  </ng-container>
+
+  <div class="nav__link nav__cart-link" (click)="onLinkClick('profile/cart')">
+    <mat-icon>shopping_cart</mat-icon>
+    <div class="nav__cart-counter">
+      {{ cartProductsCount }}
+    </div> 
+  </div>
+</div>

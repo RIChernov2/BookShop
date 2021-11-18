@@ -1,0 +1,49 @@
+@import 'variables';
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+fieldset {
+  position: relative;
+  border: 1px solid #d7d6d6;
+  border-radius: 3px;
+  flex-basis: 30%;
+}
+
+mat-checkbox {
+  margin-right: 1em;
+}
+
+.pn__actions {
+  flex: 1 0 95%;
+  margin: 1em;
+}
+
+table {
+  border-spacing: 0;
+  min-width: 40em;
+  border: 1px solid #d7d6d6;
+  border-radius: 3px;
+
+  th, td {
+      white-space: nowrap;
+      padding: 0 .3em;
+      text-align: center;
+  }
+}
+
+.pn__head-cell {
+  position: sticky;
+  top: 0;
+  height: 2em;
+  color: white;
+  background-color: $accent;
+  padding: 0 7px;
+  z-index: 1;
+}
+
+.pn__body-row:nth-child(even) {
+  background-color: #f7f7f7;
+}

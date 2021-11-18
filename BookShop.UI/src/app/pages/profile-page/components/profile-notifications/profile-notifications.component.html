@@ -1,0 +1,49 @@
+<div class="pn__wrapper">
+  <form [formGroup]="settingsFormGroup">
+    <fieldset class="pn__settings-group" formGroupName="emailSettings">
+      <loading-spinner *ngIf="settingsFormGroup.disabled" [size]="50"></loading-spinner>
+      <h4>Email settings</h4>
+      <mat-checkbox formControlName="info">Info</mat-checkbox>
+      <mat-checkbox formControlName="warning">Warning</mat-checkbox>
+      <mat-checkbox formControlName="ads">Advertisement</mat-checkbox>
+    </fieldset>
+
+    <fieldset class="pn__settings-group" formGroupName="pushSettings">
+      <loading-spinner *ngIf="settingsFormGroup.disabled" [size]="50"></loading-spinner>
+      <h4>Push settings</h4>
+      <mat-checkbox formControlName="info">Info</mat-checkbox>
+      <mat-checkbox formControlName="warning">Warning</mat-checkbox>
+      <mat-checkbox formControlName="ads">Advertisement</mat-checkbox>
+    </fieldset>
+
+    <div class="pn__actions">
+      <button mat-raised-button color="primary"
+              [disabled]="settingsFormGroup.pristine || settingsFormGroup.invalid"
+              (click)="onUpdate()"
+              class="pn__action">
+        Update notification settings
+      </button>
+    </div>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th class="pn__head-cell">Type</th>
+        <th class="pn__head-cell">Message</th>
+        <th class="pn__head-cell">Date</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <tr *ngIf="messages.length === 0" class="pn__body-row">
+        <td colspan="3">There are no notifications yet.</td>
+      </tr>
+      <tr *ngFor="let message of messages" class="pn__body-row">
+        <td>{{ message.type | messageType }}</td>
+        <td>{{ message.text }}</td>
+        <td>{{ message.date | date : 'short' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
